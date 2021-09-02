@@ -5,6 +5,17 @@ const siteMenuLinks = [
   'Вакансии',
 ];
 
+const footerNavLinks = [
+  'Корпоративным клиентам',
+  'Клиентам',
+  'Аренда авто',
+  'Каршеринг',
+  'Как продать авто',
+  'Trade-in',
+  'Test drive',
+];
+
 export {
-  siteMenuLinks
+  siteMenuLinks,
+  footerNavLinks
 };

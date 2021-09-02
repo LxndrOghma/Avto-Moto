@@ -1,0 +1,11 @@
+.footer-nav__list-item {
+  margin-left: 66px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

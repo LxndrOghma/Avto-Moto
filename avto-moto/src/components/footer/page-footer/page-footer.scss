@@ -1,0 +1,13 @@
+@import '../../../styles/variables.scss';
+
+.page-footer {
+  width: 100%;
+  min-height: 80px;
+  background-color: $light-grey;
+}
+
+.page-footer__wrapper {
+  width: $site-width;
+  margin: 0 auto;
+  padding: 28px 85px;
+}
