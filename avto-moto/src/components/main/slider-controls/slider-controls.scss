@@ -1,0 +1,58 @@
+@import '../../../styles/variables.scss';
+
+.slider__controls {
+  margin-top: 34px;
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slider-controls__button {
+  position: relative;
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
+  border: 1px solid $darker-grey;
+  border-radius: 50%;
+  background-color: $white;
+
+  &::before {
+    position: absolute;
+    content: '';
+    transform: translateY(-50%);
+    top: 50%;
+    left: 16px;
+    width: 20px;
+    height: 13px;
+    background-image: url('../../../assets/img/arrow.svg');
+  }
+
+  &:hover {
+    border-color: $dark-grey;
+  }
+
+  &--disabled {
+    cursor: initial;
+  }
+
+  &--disabled::before {
+    background-image: url('../../../assets/img/disabled-arrow.svg');
+  }
+
+  &--disabled:hover {
+    border-color: $darker-grey;
+  }
+
+  &--prev::before {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+.thumbnails {
+  display: flex;
+  min-width: 434px;
+  justify-content: space-between;
+}

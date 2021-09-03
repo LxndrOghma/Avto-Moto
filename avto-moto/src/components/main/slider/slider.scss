@@ -1,0 +1,27 @@
+@import '../../../styles/variables.scss';
+
+.images {
+ padding-top: 5px;
+}
+
+.active-slide {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: 'new model';
+    top: 0;
+    left: 0;
+    width: 123px;
+    height: 30px;
+    background-color: $red;
+    color: $white;
+    text-align: center;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-top: 8px;
+    letter-spacing: 0.07em;
+  } 
+}
