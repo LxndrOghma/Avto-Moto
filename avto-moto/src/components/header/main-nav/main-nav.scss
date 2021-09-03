@@ -1,7 +1,61 @@
+@import '../../../styles/variables.scss';
+
+.main-nav {
+  position: relative;
+}
+
+.main-nav__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 75px;
+  height: 75px;
+  background-color: $light-grey;
+  border: none;
+
+  &:hover,
+  &:active {
+    background-color: $grey;
+  }
+}
+
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 23px;
+  width: 29px;
+  height: 2px;
+  background-color: $dark-grey;
+  box-shadow: 0 8px 0 0 $dark-grey, 0 16px 0 0 $dark-grey;
+}
+
+.main-nav--closed .main-nav__toggle:active::before {
+  background-color: transparentize($dark-grey, 0.3);
+  box-shadow:
+    0 8px 0 0 transparentize($dark-grey, 0.3),
+    0 16px 0 0 transparentize($dark-grey, 0.3);
+}
+
+
 .site-menu {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   list-style: none;
   margin: 0;
+}
+
+@media (max-width: $mobile-width-only) {
+  .main-nav--closed .site-menu__item {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav__toggle {
+    display: none;
+  }
 }
