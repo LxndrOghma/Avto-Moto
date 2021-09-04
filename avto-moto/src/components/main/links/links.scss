@@ -1,0 +1,41 @@
+@import '../../../styles/variables.scss';
+
+.product-info__links {
+  margin-top: 38px;
+}
+
+.links__bid {
+  display: block;
+  width: 196px;
+  height: 51px;
+  background-color: $red;
+  color: $white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 51px;
+  margin-bottom: 16px;
+
+  &:hover {
+    background-color: $dark-red;
+  }
+}
+
+.links__credit {
+  display: block;
+  width: 222px;
+  height: 53px;
+  border: 1px solid $red;
+  line-height: 53px;
+  color: $red;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.04em;
+
+  &:hover {
+    background-color: $red;
+    color: $white;
+  }
+}

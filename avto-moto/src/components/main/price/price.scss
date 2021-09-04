@@ -1,0 +1,35 @@
+@import '../../../styles/variables.scss';
+
+.product-info__price {
+  margin-top: 38px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.price__count {
+  font-size: 35px;
+  line-height: 48px;
+  font-weight: 700;
+  margin-right: 36px;
+}
+
+.price__sale {
+  position: relative;
+  opacity: 0.5;
+  font-size: 20px;
+  line-height: 27px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 123px;
+    height: 1px;
+    background-color: $dark-grey;
+    top: 13px;
+    left: -4px;
+    transform: rotate(355deg);
+  }
+}

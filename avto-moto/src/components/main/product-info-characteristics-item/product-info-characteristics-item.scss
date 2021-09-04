@@ -1,0 +1,39 @@
+.characteristics-list__item {
+  position: relative;
+  margin-right: 7px;
+}
+
+.characteristics-list__name {
+  opacity: 0.5;
+  padding-top: 40px;
+  min-width: 70px;
+  text-align: center;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 53px;
+    height: 40px;
+    bottom: 21px;
+    left: 16px;
+    background-repeat: no-repeat;
+  }
+
+  &--fuel::before {
+    background-image: url('../../../assets/img/fuel.svg');
+    left: 10px;
+  }
+
+  &--transmission::before {
+    background-image: url('../../../assets/img/transmission.svg');
+    left: 19px;
+  }
+
+  &--power::before {
+    background-image: url('../../../assets/img/power.svg');
+  }
+
+  &--volume::before {
+    background-image: url('../../../assets/img/engine.svg');
+  }
+}
