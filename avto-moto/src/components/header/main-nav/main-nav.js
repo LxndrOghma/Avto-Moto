@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteMenuLinks } from '../../const';
+import { siteMenuLinks } from '../../../const';
 import SiteMenuItem from '../site-menu-item/site-menu-item';
 
 import './main-nav.scss';

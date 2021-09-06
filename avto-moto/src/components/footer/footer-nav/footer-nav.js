@@ -1,5 +1,5 @@
 import React from 'react';
-import { footerNavLinks } from '../../const';
+import { footerNavLinks } from '../../../const';
 import FooterNavItem from '../footer-nav-item/footer-nav-item';
 
 import './footer-nav.scss';

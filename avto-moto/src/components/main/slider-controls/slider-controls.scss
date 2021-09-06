@@ -56,3 +56,9 @@
   min-width: 434px;
   justify-content: space-between;
 }
+
+.thumbnails__image {
+  &--active {
+    outline: 3px solid $red;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
+import { productInfoCharacteristics } from '../../../const';
 
-import { productInfoCharacteristics } from '../../const';
 import ProductInfoCharacteristicsItem from '../product-info-characteristics-item/product-info-characteristics-item';
 
 import './product-info-characteristics.scss';

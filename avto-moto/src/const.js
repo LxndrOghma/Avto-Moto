@@ -1,3 +1,7 @@
+import marpeh from './assets/img/marpeh.jpg';
+import marpehSalon from './assets/img/marpeh_salon.jpg';
+import marpehSpeedometer from './assets/img/marpeh_speedometer.jpg';
+
 const siteMenuLinks = [
   'Автомобили',
   'Контакты',
@@ -34,8 +38,24 @@ const productInfoCharacteristics = [
   },
 ];
 
+const sliderImages = [
+  {
+    id: 1,
+    src: marpeh,
+  },
+  {
+    id: 2,
+    src: marpehSalon,
+  },
+  {
+    id: 3,
+    src: marpehSpeedometer,
+  },
+];
+
 export {
   siteMenuLinks,
   footerNavLinks,
-  productInfoCharacteristics
+  productInfoCharacteristics,
+  sliderImages
 };
