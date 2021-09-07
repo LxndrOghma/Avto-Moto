@@ -53,9 +53,41 @@ const sliderImages = [
   },
 ];
 
+const сharacteristicsValues = [
+  {
+    description: 'Трансмиссия',
+    value: 'Роботизированная',
+  },
+  {
+    description: 'Мощность двигателя, л.с.',
+    value: 249,
+  },
+  {
+    description: 'Тип двигателя',
+    value: 'Бензиновый',
+  },
+  {
+    description: 'Привод',
+    value: 'Полный',
+  },
+  {
+    description: 'Объем двигателя, л',
+    value: 2.4,
+  },
+  {
+    description: 'Макс. крутящий момент',
+    value: '370/4500',
+  },
+  {
+    description: 'Количество цилиндров',
+    value: 4,
+  },
+];
+
 export {
   siteMenuLinks,
   footerNavLinks,
   productInfoCharacteristics,
-  sliderImages
+  sliderImages,
+  сharacteristicsValues
 };

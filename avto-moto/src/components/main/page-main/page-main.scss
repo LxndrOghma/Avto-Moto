@@ -3,18 +3,17 @@
 .page-main {
   width: 100%;
   background-color: $white;
-  
 }
 
 .page-main__wrapper {
   width: $desktop-width;
   padding:0 87px;
-  margin: 0 auto;
-  margin-top: 85px;
+  margin: 85px auto 140px;
 }
 
 .main-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 57px;
+  grid-row-gap: 90px;
 }

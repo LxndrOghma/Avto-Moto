@@ -63,3 +63,21 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.button {
+  display: block;
+  width: 196px;
+  height: 51px;
+  background-color: $red;
+  color: $white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 51px;
+  margin-bottom: 16px;
+
+  &:hover {
+    background-color: $dark-red;
+  }
+}
