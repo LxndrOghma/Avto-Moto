@@ -6,11 +6,14 @@ import './characteristics.scss';
 
 function Characteristics() {
   return (
-    <table className='tabs__table characteristics-table'>
-      <tbody>
-        {сharacteristicsValues.map((char) => <CharacteristicsItem key={char} characteristic={char} />)}
-      </tbody>
-    </table>
+    <div className='characteristics'>
+      <table className='characteristics-table'>
+        <tbody>
+          {сharacteristicsValues.map((char) => <CharacteristicsItem key={char} characteristic={char} />)}
+        </tbody>
+      </table>
+    </div>
+
   );
 }
 

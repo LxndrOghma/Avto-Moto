@@ -1,0 +1,45 @@
+@import '../../../styles/variables.scss';
+
+.tabs__contacts {
+  margin-top: 26px;
+}
+
+.contacts {
+  display: flex;
+}
+
+.contacts__info {
+  max-width: 274px;
+  margin-right: 77px;
+}
+
+.contacts-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contats-list__item {
+  margin-bottom: 26px;
+}
+
+.contacts-list__header {
+  font-weight: 700;
+  color: $darkest-grey;
+  margin-bottom: 7px;
+   
+    &--adress {
+      margin-bottom: 11px;
+    }
+}
+
+.contacts-list__description {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: $black;
+}
+
+.contacts__map {
+  margin-top: 4px;
+}
