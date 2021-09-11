@@ -1,0 +1,38 @@
+@import '../../../styles/variables.scss';
+
+.tabs__reviews {
+  margin-top: 30px;
+}
+
+.reviews {
+  position: relative;
+}
+
+.reviews__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reviews__link {
+  position: absolute;
+  content: '';
+  right: 8px;
+  top:0;
+
+  display: block;
+  width: 189px;
+  height: 53px;
+  border: 1px solid $red;
+  line-height: 53px;
+  color: $red;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.04em;
+
+  &:hover {
+    background-color: $red;
+    color: $white;
+  }
+}
