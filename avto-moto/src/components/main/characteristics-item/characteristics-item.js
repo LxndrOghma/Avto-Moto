@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { number, string } from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './characteristics-item.scss';
 
@@ -15,7 +15,7 @@ function CharacteristicsItem({characteristic}) {
 CharacteristicsItem.propTypes = {
   characteristic: PropTypes.shape({
     description: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType(string, number),
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }),
 };
 

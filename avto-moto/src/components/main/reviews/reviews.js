@@ -1,5 +1,6 @@
 import React from 'react';
 import { reviewsMocks } from '../../../mocks/reviews-mocks';
+import ReviewForm from '../review-form/review-form';
 import ReviewsItem from '../reviews-item/reviews-item';
 
 import './reviews.scss';
@@ -11,6 +12,7 @@ function Reviews() {
         {reviewsMocks.map((review) => <ReviewsItem key={review.id} review={review} />)}
       </ul>
       <a href='/' className='reviews__link'>Оставить отзыв</a>
+      <ReviewForm />
     </div>
   );
 }

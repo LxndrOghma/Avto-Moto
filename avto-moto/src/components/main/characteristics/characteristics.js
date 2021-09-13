@@ -9,7 +9,7 @@ function Characteristics() {
     <div className='characteristics'>
       <table className='characteristics-table'>
         <tbody>
-          {сharacteristicsValues.map((char) => <CharacteristicsItem key={char} characteristic={char} />)}
+          {сharacteristicsValues.map((char) => <CharacteristicsItem key={char.description} characteristic={char} />)}
         </tbody>
       </table>
     </div>
