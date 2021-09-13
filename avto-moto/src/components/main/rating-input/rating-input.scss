@@ -1,7 +1,24 @@
+@import '../../../styles/variables.scss';
+
 .rating__input-label {
   margin-right: 9px;
 
-  &:nth-last-child(1) {
+  &:first-of-type {
     margin-right: 0;
   }
+}
+
+.rating__input-label {
+  cursor: pointer;
+}
+
+.rating__input:checked ~ .rating__input-label .rating__input-svg,
+.rating__input:focus ~ .rating__input-label .rating__input-svg,
+.rating__input-label:hover .rating__input-svg,
+.rating__input-label:hover ~ .rating__input-label .rating__input-svg {
+  fill: $red;
+}
+
+.rating__input-svg {
+  fill: transparentize($star-grey, 0.3)
 }

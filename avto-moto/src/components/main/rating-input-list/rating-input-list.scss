@@ -1,4 +1,6 @@
 .rating__input-list {
   display:flex;
   justify-content: space-around;
+  flex-direction: row-reverse;
+  height: max-content;
 }
