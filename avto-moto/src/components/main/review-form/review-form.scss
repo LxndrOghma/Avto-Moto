@@ -52,7 +52,11 @@
   font-size: 14px;
   line-height: 19px;
   border: 1px solid transparentize($dark-grey, 0.8);
-  color: $dark-grey;
+  color: $dark-grey;  
+}
+
+.inputs-block__input:invalid {
+  border-color: $bright-red;
 }
 
 .inputs-block__rating {
@@ -60,16 +64,54 @@
 }
 
 .inputs-block__label {
+  position: relative;
   font-weight: 600;
   font-size: 15px;
   line-height: 20px;
   padding-top: 5px;
   color: $black;
   margin-right: 16px;
+
+  &:first-of-type:before {
+    position: absolute;
+    content: '*';
+    top: 5px;
+    left: -316px;
+    color: $red;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.inputs-block__error {
+  display: none;
+}
+
+.inputs-block__input:invalid + .inputs-block__error {
+  display: block;
+  position: absolute;
+  color: $bright-red;
+  font-size: 14px;
+  line-height: 19px;
+  top: 90px;
+}
+
+.inputs-block__comment-block {
+  position: relative;
+  grid-row: 2 / 4 ;
+
+  &::before {
+    position: absolute;
+    content: '*';
+    top: 5px;
+    left: 12px;
+    color: $red;
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .inputs-block__comment {
-  grid-row: 2 / 4 ;
   width: 300px;
   height: 118px;
   resize: none;
@@ -79,6 +121,31 @@
   font-size: 14px;
   line-height: 19px;
   color: $dark-grey;
+}
+
+.inputs-block__comment:invalid {
+  border-color: $bright-red;
+}
+
+.inputs-block__comment:invalid + .inputs-block__error {
+  display: block;
+  position: absolute;
+  color: $bright-red;
+  font-size: 14px;
+  line-height: 19px;
+  top: 0px;
+}
+
+.inputs-block__exit-button {
+  position: absolute;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  right: 25px;
+  top: 25px;
+  background-color: inherit;
+  border: none;
+  background-image: url(../../../assets/img/cross.svg);
 }
 
 .inputs-block__button {
