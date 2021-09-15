@@ -11,6 +11,8 @@ function Reviews() {
   const onLeaveFeedbackClick = (evt) => {
     evt.preventDefault();
     setIsDisabled(false);
+    const body = document.querySelector('.page');
+    body.classList.add('page--modal-open');
   };
 
   return (

@@ -6,14 +6,22 @@ import RatingInputList from '../rating-input-list/rating-input-list';
 import './review-form.scss';
 
 function ReviewForm ({isDisabled, setIsDisabled}) {
-  const onButtonClick = (evt) => {
+  const onExitClick = (evt) => {
     evt.preventDefault();
     setIsDisabled(true);
+    const body = document.querySelector('.page');
+    body.classList.remove('page--modal-open');
+  };
+
+  const onSubmit = () => {
+    setIsDisabled(true);
+    const body = document.querySelector('.page');
+    body.classList.remove('page--modal-open');
   };
 
   return (
     <div className={`reviews__form ${isDisabled ? 'visually-hidden' : ''}`}>
-      <form className='review-form'>
+      <form className='review-form' onSubmit={onSubmit}>
         <h2 className='review-form__header'>Оставить отзыв</h2>
         <div className='review-form__inputs inputs-block'>
           <label className='inputs-block__label visually-hidden' htmlFor='name'>Имя</label>
@@ -32,8 +40,8 @@ function ReviewForm ({isDisabled, setIsDisabled}) {
             <textarea className='inputs-block__comment' id='comment' name='comment' placeholder='Комментарий' required></textarea>
           </div>
         </div>
-        <button className='inputs-block__exit-button' onClick={onButtonClick} />
-        <button className='inputs-block__button' type='submit' onClick={() => {setIsDisabled(false);}}>Оставить отзыв</button>
+        <button className='inputs-block__exit-button' onClick={onExitClick} />
+        <button className='inputs-block__button' type='submit'>Оставить отзыв</button>
       </form>
     </div>
   );
