@@ -1,6 +1,7 @@
 import React from 'react';
+import { Map, Placemark, YMaps } from 'react-yandex-maps';
 
-import map from '../../../assets/img/map.png';
+import marker from '../../../assets/img/location.svg';
 
 import './contacts.scss';
 
@@ -28,7 +29,22 @@ function Contacts() {
         </ul>
       </div>
       <div className='contacts__map'>
-        <img src={map} alt='Avto Moto Location' width='431' height='271' />
+        <YMaps>
+          <Map
+            width={'100%'}
+            height={'100%'}
+            defaultState={{ center: [59.96826398208184, 30.316416896706528], zoom: 15 }}
+          >
+            <Placemark geometry={[59.96826398208184, 30.316416896706528]}
+              options={{
+                iconLayout: 'default#image',
+                iconImageHref: marker,
+                iconImageSize: [32, 40],
+                iconImageOffset: [-16, -40],
+              }}
+            />
+          </Map>
+        </YMaps>
       </div>
     </div>
   );
