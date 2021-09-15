@@ -1,11 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import RatingInputList from '../rating-input-list/rating-input-list';
 
 import './review-form.scss';
 
-function ReviewForm () {
+function ReviewForm ({isDisabled, setIsDisabled}) {
+  const onButtonClick = (evt) => {
+    evt.preventDefault();
+    setIsDisabled(true);
+  };
+
   return (
-    <div className='reviews__form'>
+    <div className={`reviews__form ${isDisabled ? 'visually-hidden' : ''}`}>
       <form className='review-form'>
         <h2 className='review-form__header'>Оставить отзыв</h2>
         <div className='review-form__inputs inputs-block'>
@@ -25,11 +32,16 @@ function ReviewForm () {
             <textarea className='inputs-block__comment' id='comment' name='comment' placeholder='Комментарий' required></textarea>
           </div>
         </div>
-        <button className='inputs-block__exit-button' />
-        <button className='inputs-block__button' type='submit' >Оставить отзыв</button>
+        <button className='inputs-block__exit-button' onClick={onButtonClick} />
+        <button className='inputs-block__button' type='submit' onClick={() => {setIsDisabled(false);}}>Оставить отзыв</button>
       </form>
     </div>
   );
 }
+
+ReviewForm.propTypes = {
+  isDisabled: PropTypes.bool.isRequired,
+  setIsDisabled: PropTypes.func.isRequired,
+};
 
 export default ReviewForm;
