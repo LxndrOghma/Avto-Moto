@@ -6,10 +6,11 @@ import RatingInputList from '../rating-input-list/rating-input-list';
 import './review-form.scss';
 
 function ReviewForm ({isDisabled, setIsDisabled}) {
+  const body = document.querySelector('.page');
+
   const onExitClick = (evt) => {
     evt.preventDefault();
     setIsDisabled(true);
-    const body = document.querySelector('.page');
     body.classList.remove('page--modal-open');
   };
 
@@ -25,11 +26,14 @@ function ReviewForm ({isDisabled, setIsDisabled}) {
 
     localStorage.setItem(comment.name, comment.value);
 
-    const body = document.querySelector('.page');
     body.classList.remove('page--modal-open');
   };
 
-  const onClickOutsideForm = (evt) => (evt.target === evt.currentTarget) && setIsDisabled(true);
+  const onClickOutsideForm = (evt) => {
+    (evt.target === evt.currentTarget) && setIsDisabled(true);
+    body.classList.remove('page--modal-open');
+  };
+
   return (
     <div tabIndex={-1} className={`reviews__form ${isDisabled ? 'visually-hidden' : ''}`} onClick={onClickOutsideForm} >
       <form method='POST' action='https://echo.htmlacademy.ru/' className='review-form' onSubmit={onSubmit} >

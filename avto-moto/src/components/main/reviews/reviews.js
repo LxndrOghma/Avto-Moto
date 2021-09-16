@@ -7,15 +7,18 @@ import './reviews.scss';
 
 function Reviews() {
   const [isDisabled, setIsDisabled] = useState(true);
+  const body = document.querySelector('.page');
 
   const onLeaveFeedbackClick = (evt) => {
     evt.preventDefault();
     setIsDisabled(false);
-    const body = document.querySelector('.page');
     body.classList.add('page--modal-open');
   };
 
-  const onEscKeydown = (evt) => (evt.keyCode === 27) && setIsDisabled(true);
+  const onEscKeydown = (evt) => {
+    (evt.keyCode === 27) && setIsDisabled(true);
+    body.classList.remove('page--modal-open');
+  };
 
   return (
     <div className='tabs__reviews reviews' onKeyDown={onEscKeydown}>
