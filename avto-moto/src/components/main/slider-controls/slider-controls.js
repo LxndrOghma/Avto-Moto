@@ -9,7 +9,7 @@ function SliderControls({images, onNextClick, onPrevClick, activeImgId, thumbnai
   const isNextButtonDisabled = activeImgId === thumbnailsCount;
 
   return (
-    <div className='slider__controls slider-controls'>
+    <div className='slider-controls'>
       <button
         className={`slider-controls__button slider-controls__button--prev ${isPrevButtonDisabled ? 'slider-controls__button--disabled' : ''}`}
         disabled={isPrevButtonDisabled}

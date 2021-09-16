@@ -24,6 +24,7 @@ function Tabs() {
 
   return (
     <section className='page-main__tabs tabs'>
+      <h2 className='visually-hidden'>Характеристики, отзывы, контакты</h2>
       <TabsControls activeTab={activeTab} setActiveTab={setActiveTab}/>
       {renderActiveTab(activeTab)}
     </section>

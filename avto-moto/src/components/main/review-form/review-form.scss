@@ -52,7 +52,11 @@
   font-size: 14px;
   line-height: 19px;
   border: 1px solid transparentize($dark-grey, 0.8);
-  color: $dark-grey;  
+  color: $dark-grey;
+
+  &:hover {
+    border-color: transparentize($dark-grey, 0.5);
+  }
 }
 
 .inputs-block__input:invalid {
@@ -83,17 +87,18 @@
   }
 }
 
-.inputs-block__error {
+.review-form__error {
   display: none;
 }
 
-.inputs-block__input:invalid + .inputs-block__error {
+.review-form:invalid .review-form__error {
   display: block;
   position: absolute;
   color: $bright-red;
   font-size: 14px;
   line-height: 19px;
   top: 90px;
+  left: 36px;
 }
 
 .inputs-block__comment-block {
@@ -127,16 +132,7 @@
   border-color: $bright-red;
 }
 
-.inputs-block__comment:invalid + .inputs-block__error {
-  display: block;
-  position: absolute;
-  color: $bright-red;
-  font-size: 14px;
-  line-height: 19px;
-  top: 0px;
-}
-
-.inputs-block__exit-button {
+.review-form__exit-button {
   position: absolute;
   cursor: pointer;
   width: 15px;
@@ -148,7 +144,7 @@
   background-image: url(../../../assets/img/cross.svg);
 }
 
-.inputs-block__button {
+.review-form__button {
   display: block;
   width: 190px;
   height: 52px;

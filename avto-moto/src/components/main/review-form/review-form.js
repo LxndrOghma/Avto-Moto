@@ -15,18 +15,28 @@ function ReviewForm ({isDisabled, setIsDisabled}) {
 
   const onSubmit = () => {
     setIsDisabled(true);
+
+    const inputs = document.querySelectorAll('.inputs-block__input');
+    const comment = document.querySelector('.inputs-block__comment');
+
+    inputs.forEach((input) => {
+      localStorage.setItem(input.name, input.value);
+    });
+
+    localStorage.setItem(comment.name, comment.value);
+
     const body = document.querySelector('.page');
     body.classList.remove('page--modal-open');
   };
 
+  const onClickOutsideForm = (evt) => (evt.target === evt.currentTarget) && setIsDisabled(true);
   return (
-    <div className={`reviews__form ${isDisabled ? 'visually-hidden' : ''}`}>
-      <form className='review-form' onSubmit={onSubmit}>
+    <div tabIndex={-1} className={`reviews__form ${isDisabled ? 'visually-hidden' : ''}`} onClick={onClickOutsideForm} >
+      <form method='POST' action='https://echo.htmlacademy.ru/' className='review-form' onSubmit={onSubmit} >
         <h2 className='review-form__header'>Оставить отзыв</h2>
         <div className='review-form__inputs inputs-block'>
           <label className='inputs-block__label visually-hidden' htmlFor='name'>Имя</label>
           <input className='inputs-block__input' id='name' name='name' type='text' placeholder='Имя' required></input>
-          <span className='inputs-block__error'>Пожалуйста, заполните поле</span>
           <label className='inputs-block__label visually-hidden' htmlFor='advantages'>Достоинства</label>
           <input className='inputs-block__input' id='advantages' name='advantages' type='text' placeholder='Достоинства'></input>
           <label className='inputs-block__label visually-hidden' htmlFor='disadvantages'>Недостатки</label>
@@ -40,8 +50,9 @@ function ReviewForm ({isDisabled, setIsDisabled}) {
             <textarea className='inputs-block__comment' id='comment' name='comment' placeholder='Комментарий' required></textarea>
           </div>
         </div>
-        <button className='inputs-block__exit-button' onClick={onExitClick} />
-        <button className='inputs-block__button' type='submit'>Оставить отзыв</button>
+        <button className='review-form__exit-button' onClick={onExitClick} />
+        <button className='review-form__button' type='submit'>Оставить отзыв</button>
+        <span className='review-form__error'>Пожалуйста, заполните поле</span>
       </form>
     </div>
   );

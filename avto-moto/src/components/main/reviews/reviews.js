@@ -15,8 +15,10 @@ function Reviews() {
     body.classList.add('page--modal-open');
   };
 
+  const onEscKeydown = (evt) => (evt.keyCode === 27) && setIsDisabled(true);
+
   return (
-    <div className='tabs__reviews reviews'>
+    <div className='tabs__reviews reviews' onKeyDown={onEscKeydown}>
       <ul className='reviews__list'>
         {reviewsMocks.map((review) => <ReviewsItem key={review.id} review={review} />)}
       </ul>

@@ -22,6 +22,7 @@ function Slider() {
 
   return (
     <section className='images'>
+      <h2 className='visually-hidden'>Слайдер изображений</h2>
       <div className='images__wrapper slider'>
         <div className='slider__image-wrapper active-slide'>
           <img
