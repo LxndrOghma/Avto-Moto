@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { reviewsMocks } from '../../../mocks/reviews-mocks';
 import ReviewForm from '../review-form/review-form';
 import ReviewsItem from '../reviews-item/reviews-item';
 
 import './reviews.scss';
 
-function Reviews() {
+function Reviews({onModalShown}) {
   const [isDisabled, setIsDisabled] = useState(true);
-  const body = document.querySelector('.page');
 
   const onLeaveFeedbackClick = (evt) => {
     evt.preventDefault();
     setIsDisabled(false);
-    body.classList.add('page--modal-open');
+    onModalShown(true);
   };
 
   const onEscKeydown = (evt) => {
     (evt.keyCode === 27) && setIsDisabled(true);
-    body.classList.remove('page--modal-open');
+    onModalShown(false);
   };
 
   return (
@@ -26,9 +26,13 @@ function Reviews() {
         {reviewsMocks.map((review) => <ReviewsItem key={review.id} review={review} />)}
       </ul>
       <a href='/' className='reviews__link' onClick={onLeaveFeedbackClick}>Оставить отзыв</a>
-      <ReviewForm isDisabled={isDisabled} setIsDisabled={setIsDisabled} />
+      <ReviewForm isDisabled={isDisabled} setIsDisabled={setIsDisabled} onModalShown={onModalShown} />
     </div>
   );
 }
+
+Reviews.propTypes ={
+  onModalShown: PropTypes.func.isRequired,
+};
 
 export default Reviews;

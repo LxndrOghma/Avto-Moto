@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Characteristics from '../characteristics/characteristics';
 import Reviews from '../reviews/reviews';
 import Contacts from '../contacts/contacts';
@@ -6,7 +7,7 @@ import TabsControls from '../tabs-controls/tabs-controls';
 
 import './tabs.scss';
 
-function Tabs() {
+function Tabs({onModalShown}) {
   const [activeTab, setActiveTab] = useState('characteristics');
 
   const renderActiveTab = (tab) => {
@@ -16,7 +17,7 @@ function Tabs() {
       case 'contacts':
         return <Contacts />;
       case 'reviews':
-        return <Reviews />;
+        return <Reviews onModalShown={onModalShown} />;
       default:
         return <Characteristics />;
     }
@@ -30,5 +31,9 @@ function Tabs() {
     </section>
   );
 }
+
+Tabs.propTypes ={
+  onModalShown: PropTypes.func.isRequired,
+};
 
 export default Tabs;
