@@ -5,6 +5,7 @@ import ReviewForm from '../review-form/review-form';
 import ReviewsItem from '../reviews-item/reviews-item';
 
 import './reviews.scss';
+import { escButtonCode } from '../../../const';
 
 function Reviews({onModalShown}) {
   const [isDisabled, setIsDisabled] = useState(true);
@@ -16,7 +17,7 @@ function Reviews({onModalShown}) {
   };
 
   const onEscKeydown = (evt) => {
-    (evt.keyCode === 27) && setIsDisabled(true);
+    (evt.keyCode === escButtonCode) && setIsDisabled(true);
     onModalShown(false);
   };
 
@@ -26,7 +27,7 @@ function Reviews({onModalShown}) {
         {reviewsMocks.map((review) => <ReviewsItem key={review.id} review={review} />)}
       </ul>
       <a href='/' className='reviews__link' onClick={onLeaveFeedbackClick}>Оставить отзыв</a>
-      <ReviewForm isDisabled={isDisabled} setIsDisabled={setIsDisabled} onModalShown={onModalShown} />
+      <ReviewForm isDisabled={isDisabled} onIsDisabledChange={setIsDisabled} onModalShown={onModalShown} />
     </div>
   );
 }

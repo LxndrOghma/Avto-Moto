@@ -72,7 +72,7 @@
   }
 }
 
-.rating__active-stars {
+.rating__active_stars {
   position: absolute;
   top: 0;
   left: 0;
@@ -85,7 +85,7 @@
     content: '';
     display: inline-block;
     height: 100%;
-    background-image: url('../../../assets/img/active-stars.svg');
+    background-image: url('../../../assets/img/active_stars.svg');
     z-index: 2;
   }
 }

@@ -24,7 +24,7 @@ function ReviewsItem({review}) {
       </div>
       <div className="review__rating rating">
         <div className="rating__stars">
-          <span className='rating__active-stars' style={{ width: `${ rating * 20 }%` }}></span>
+          <span className='rating__active_stars' style={{ width: `${ rating * 20 }%` }}></span>
           <span className="visually-hidden">Rating</span>
         </div>
         <span className={`rating__advises ${advise ? '' : 'visually-hidden'}`}>Советует</span>

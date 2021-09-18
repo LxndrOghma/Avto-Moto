@@ -86,11 +86,14 @@ const сharacteristicsValues = [
 
 const ratings = [5, 4, 3, 2, 1];
 
+const escButtonCode = 27;
+
 export {
   siteMenuLinks,
   footerNavLinks,
   productInfoCharacteristics,
   sliderImages,
   сharacteristicsValues,
-  ratings
+  ratings,
+  escButtonCode
 };

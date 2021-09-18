@@ -5,7 +5,7 @@ import RatingInputList from '../rating-input-list/rating-input-list';
 
 import './review-form.scss';
 
-function ReviewForm ({isDisabled, setIsDisabled, onModalShown}) {
+function ReviewForm ({isDisabled, onIsDisabledChange, onModalShown}) {
   const [formData, setFormData] = useState({
     name: '',
     advantages: '',
@@ -16,12 +16,12 @@ function ReviewForm ({isDisabled, setIsDisabled, onModalShown}) {
 
   const onExitClick = (evt) => {
     evt.preventDefault();
-    setIsDisabled(true);
+    onIsDisabledChange(true);
     onModalShown(false);
   };
 
   const onSubmit = () => {
-    setIsDisabled(true);
+    onIsDisabledChange(true);
 
     Object.entries(formData).forEach((data) => {
       localStorage.setItem(data[0], data[1]);
@@ -31,7 +31,7 @@ function ReviewForm ({isDisabled, setIsDisabled, onModalShown}) {
   };
 
   const onClickOutsideForm = (evt) => {
-    (evt.target === evt.currentTarget) && setIsDisabled(true);
+    (evt.target === evt.currentTarget) && onIsDisabledChange(true);
     onModalShown(false);
   };
 
@@ -102,7 +102,7 @@ function ReviewForm ({isDisabled, setIsDisabled, onModalShown}) {
 
 ReviewForm.propTypes = {
   isDisabled: PropTypes.bool.isRequired,
-  setIsDisabled: PropTypes.func.isRequired,
+  onIsDisabledChange: PropTypes.func.isRequired,
   onModalShown: PropTypes.func.isRequired,
 };
 

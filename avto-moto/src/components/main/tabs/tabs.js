@@ -13,20 +13,20 @@ function Tabs({onModalShown}) {
   const renderActiveTab = (tab) => {
     switch (tab) {
       case 'characteristics':
-        return <Characteristics />;
+      { return <Characteristics />; }
       case 'contacts':
-        return <Contacts />;
+      { return <Contacts />; }
       case 'reviews':
-        return <Reviews onModalShown={onModalShown} />;
+      { return <Reviews onModalShown={onModalShown} />; }
       default:
-        return <Characteristics />;
+      { return <Characteristics />; }
     }
   };
 
   return (
     <section className='page-main__tabs tabs'>
       <h2 className='visually-hidden'>Характеристики, отзывы, контакты</h2>
-      <TabsControls activeTab={activeTab} setActiveTab={setActiveTab}/>
+      <TabsControls activeTab={activeTab} onActiveTabChange={setActiveTab}/>
       {renderActiveTab(activeTab)}
     </section>
   );
