@@ -88,6 +88,15 @@ const ratings = [5, 4, 3, 2, 1];
 
 const escButtonCode = 27;
 
+const defaultFormData = ({
+  name: '',
+  advantages: '',
+  disadvantages: '',
+  rating: 0,
+  comment: '',
+  advise: false,
+});
+
 export {
   siteMenuLinks,
   footerNavLinks,
@@ -95,5 +104,6 @@ export {
   sliderImages,
   сharacteristicsValues,
   ratings,
-  escButtonCode
+  escButtonCode,
+  defaultFormData
 };

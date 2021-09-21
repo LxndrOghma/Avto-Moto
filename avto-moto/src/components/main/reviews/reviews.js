@@ -8,6 +8,7 @@ import './reviews.scss';
 import { escButtonCode } from '../../../const';
 
 function Reviews({onModalShown}) {
+  const [reviews, setReviews] = useState(reviewsMocks);
   const [isDisabled, setIsDisabled] = useState(true);
 
   const onLeaveFeedbackClick = (evt) => {
@@ -24,10 +25,16 @@ function Reviews({onModalShown}) {
   return (
     <div className='tabs__reviews reviews' onKeyDown={onEscKeydown}>
       <ul className='reviews__list'>
-        {reviewsMocks.map((review) => <ReviewsItem key={review.id} review={review} />)}
+        {reviews.map((review) => <ReviewsItem key={review.id} review={review} />)}
       </ul>
       <a href='/' className='reviews__link' onClick={onLeaveFeedbackClick}>Оставить отзыв</a>
-      <ReviewForm isDisabled={isDisabled} onIsDisabledChange={setIsDisabled} onModalShown={onModalShown} />
+      <ReviewForm
+        isDisabled={isDisabled}
+        onIsDisabledChange={setIsDisabled}
+        onModalShown={onModalShown}
+        reviews={reviews}
+        onReviewAdd={setReviews}
+      />
     </div>
   );
 }

@@ -12,6 +12,7 @@ function RatingInput({starsCount, onRatingChange, formData}) {
         value={starsCount}
         id={`${starsCount}-stars`}
         type="radio"
+        checked = {starsCount === formData.rating}
         onChange={() => onRatingChange({...formData, rating: starsCount})}
       />
       <label htmlFor={`${starsCount}-stars`} className="rating__input-label" title={`${starsCount}-stars`}>

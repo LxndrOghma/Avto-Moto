@@ -4,15 +4,14 @@ import PropTypes from 'prop-types';
 import RatingInputList from '../rating-input-list/rating-input-list';
 
 import './review-form.scss';
+import { defaultFormData } from '../../../const';
 
-function ReviewForm ({isDisabled, onIsDisabledChange, onModalShown}) {
-  const [formData, setFormData] = useState({
-    name: '',
-    advantages: '',
-    disadvantages: '',
-    rating: 0,
-    comment: '',
-  });
+function ReviewForm ({isDisabled, onIsDisabledChange, onModalShown, reviews, onReviewAdd}) {
+  const [formData, setFormData] = useState(defaultFormData);
+
+  const [isFormValid, setIsFormValid] = useState(true);
+  const [isNameValid, setIsNameValid] = useState(true);
+  const [isCommentValid, setIsCommentValid] = useState(true);
 
   const onExitClick = (evt) => {
     evt.preventDefault();
@@ -20,7 +19,27 @@ function ReviewForm ({isDisabled, onIsDisabledChange, onModalShown}) {
     onModalShown(false);
   };
 
-  const onSubmit = () => {
+  const onSubmit = (evt) => {
+    evt.preventDefault();
+
+    !formData.name.length ? setIsNameValid(false) : setIsNameValid(true);
+    !formData.comment.length ? setIsCommentValid(false) : setIsNameValid(true);
+
+    if (!formData.name.length || !formData.comment.length) {
+      setIsFormValid(false);
+      evt.preventDefault();
+      return;
+    }
+
+    onReviewAdd(
+      [...reviews,
+        {
+          ...formData,
+          id: Math.round(Math.random()*1000),
+        },
+      ],
+    );
+
     onIsDisabledChange(true);
 
     Object.entries(formData).forEach((data) => {
@@ -28,11 +47,14 @@ function ReviewForm ({isDisabled, onIsDisabledChange, onModalShown}) {
     });
 
     onModalShown(false);
+    setFormData(defaultFormData);
   };
 
   const onClickOutsideForm = (evt) => {
-    (evt.target === evt.currentTarget) && onIsDisabledChange(true);
-    onModalShown(false);
+    if (evt.target === evt.currentTarget) {
+      onIsDisabledChange(true);
+      onModalShown(false);
+    }
   };
 
   return (
@@ -42,14 +64,13 @@ function ReviewForm ({isDisabled, onIsDisabledChange, onModalShown}) {
         <div className='review-form__inputs inputs-block'>
           <label className='inputs-block__label visually-hidden' htmlFor='name'>Имя</label>
           <input
-            className='inputs-block__input'
+            className={`inputs-block__input ${!isNameValid ? 'inputs-block__input--invalid' : ''}`}
             id='name'
             name='name'
             type='text'
             placeholder='Имя'
             value={formData.name}
             onChange={(evt) => setFormData({...formData, name: evt.target.value})}
-            required
           >
           </input>
           <label className='inputs-block__label visually-hidden' htmlFor='advantages'>Достоинства</label>
@@ -81,20 +102,19 @@ function ReviewForm ({isDisabled, onIsDisabledChange, onModalShown}) {
           <div className='inputs-block__comment-block'>
             <label className=' visually-hidden' htmlFor='comment'>Комментарий</label>
             <textarea
-              className='inputs-block__comment'
+              className={`inputs-block__comment ${!isCommentValid ? 'inputs-block__comment--invalid' : ''}`}
               id='comment'
               name='comment'
               placeholder='Комментарий'
               value={formData.comment}
               onChange={(evt) => setFormData({...formData, comment: evt.target.value})}
-              required
             >
             </textarea>
           </div>
         </div>
         <button className='review-form__exit-button' onClick={onExitClick} />
         <button className='review-form__button' type='submit'>Оставить отзыв</button>
-        <span className='review-form__error'>Пожалуйста, заполните поле</span>
+        <span className={`review-form__error ${!isFormValid ? 'review-form__error--active' : ''}`}>Пожалуйста, заполните поле</span>
       </form>
     </div>
   );
@@ -104,6 +124,15 @@ ReviewForm.propTypes = {
   isDisabled: PropTypes.bool.isRequired,
   onIsDisabledChange: PropTypes.func.isRequired,
   onModalShown: PropTypes.func.isRequired,
+  reviews: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    advantages: PropTypes.string.isRequired,
+    disadvantages: PropTypes.string.isRequired,
+    comment: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    advise: PropTypes.bool.isRequired,
+  })),
+  onReviewAdd: PropTypes.func.isRequired,
 };
 
 export default ReviewForm;

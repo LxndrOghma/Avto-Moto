@@ -59,7 +59,7 @@
   }
 }
 
-.inputs-block__input:invalid {
+.inputs-block__input--invalid {
   border-color: $bright-red;
 }
 
@@ -91,7 +91,17 @@
   display: none;
 }
 
-.review-form:invalid .review-form__error {
+// .review-form:invalid .review-form__error {
+//   display: block;
+//   position: absolute;
+//   color: $bright-red;
+//   font-size: 14px;
+//   line-height: 19px;
+//   top: 90px;
+//   left: 36px;
+// }
+
+.review-form__error--active {
   display: block;
   position: absolute;
   color: $bright-red;
@@ -128,7 +138,7 @@
   color: $dark-grey;
 }
 
-.inputs-block__comment:invalid {
+.inputs-block__comment--invalid {
   border-color: $bright-red;
 }
 
@@ -145,6 +155,7 @@
 }
 
 .review-form__button {
+  cursor: pointer;
   display: block;
   width: 190px;
   height: 52px;

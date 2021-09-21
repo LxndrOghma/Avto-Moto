@@ -7,7 +7,7 @@
 }
 
 .page-footer__wrapper {
-  width: $desktop-width;
+  max-width: $max-desktop-width;
   margin: 0 auto;
   padding: 28px 93px;
 }

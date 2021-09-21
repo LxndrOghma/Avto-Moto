@@ -6,7 +6,7 @@
 }
 
 .page-main__wrapper {
-  width: $desktop-width;
+  max-width: $max-desktop-width;
   padding:0 87px;
   margin: 85px auto 140px;
 }
