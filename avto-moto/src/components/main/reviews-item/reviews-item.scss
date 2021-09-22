@@ -53,7 +53,7 @@
   margin-bottom: 25px;
 }
 
-.rating {
+.review-rating {
   display: flex;
 }
 
@@ -85,7 +85,7 @@
     content: '';
     display: inline-block;
     height: 100%;
-    background-image: url('../../../assets/img/active_stars.svg');
+    background-image: url('../../../assets/img/rating-stars.svg');
     z-index: 2;
   }
 }

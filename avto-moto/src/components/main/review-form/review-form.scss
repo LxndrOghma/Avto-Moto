@@ -91,16 +91,6 @@
   display: none;
 }
 
-// .review-form:invalid .review-form__error {
-//   display: block;
-//   position: absolute;
-//   color: $bright-red;
-//   font-size: 14px;
-//   line-height: 19px;
-//   top: 90px;
-//   left: 36px;
-// }
-
 .review-form__error--active {
   display: block;
   position: absolute;
@@ -171,4 +161,12 @@
   &:hover {
     background-color: $dark-red;
   }
+}
+
+.rating {
+  border: none;
+}
+
+.rating__legend {
+  float: left;
 }

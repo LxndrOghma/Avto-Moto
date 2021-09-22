@@ -95,10 +95,10 @@ function ReviewForm ({isDisabled, onIsDisabledChange, onModalShown, reviews, onR
             onChange={(evt) => setFormData({...formData, disadvantages: evt.target.value})}
           >
           </input>
-          <div className='inputs-block__rating rating'>
-            <label className='inputs-block__label'>Оцените товар:</label>
+          <fieldset className='inputs-block__rating rating'>
+            <legend className='inputs-block__label rating__legend'>Оцените товар:</legend>
             <RatingInputList onRatingChange={setFormData} formData={formData}/>
-          </div>
+          </fieldset>
           <div className='inputs-block__comment-block'>
             <label className=' visually-hidden' htmlFor='comment'>Комментарий</label>
             <textarea

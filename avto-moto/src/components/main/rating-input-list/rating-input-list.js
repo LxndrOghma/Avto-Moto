@@ -7,7 +7,7 @@ import './rating-input-list.scss';
 
 function RatingInputList({onRatingChange, formData}) {
   return (
-    <div className='rating__input-list'>
+    <div className='rating__group'>
       {ratings.map((rating) => <RatingInput key={rating} starsCount={rating} onRatingChange={onRatingChange} formData={formData} />)}
     </div>
   );

@@ -22,7 +22,7 @@ function ReviewsItem({review}) {
         <p className='review__header'>Комментарий</p>
         <p className='review__text review__text--comment'>{comment}</p>
       </div>
-      <div className="review__rating rating">
+      <div className="review__rating review-rating">
         <div className="rating__stars">
           <span className='rating__active_stars' style={{ width: `${ rating * 20 }%` }}></span>
           <span className="visually-hidden">Rating</span>

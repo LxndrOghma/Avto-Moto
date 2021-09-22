@@ -1,24 +1,50 @@
 @import '../../../styles/variables.scss';
 
-.rating__input-label {
-  margin-right: 9px;
+.rating__star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 26px;
+  font-size: inherit;
+  appearance: none;
+  background-size: auto 27px;
+  background-repeat: no-repeat;
 
-  &:first-of-type {
-    margin-right: 0;
+  &:nth-of-type(1) {
+    width: 28px;
+    z-index: 5;
+  }
+
+  &:nth-of-type(2) {
+    width: 63px;
+    z-index: 4;
+  }
+
+  &:nth-of-type(3) {
+    width: 98px;
+    z-index: 3;
+  }
+
+  &:nth-of-type(4) {
+    width: 133px;
+    z-index: 2;
+  }
+
+  &:nth-of-type(5) {
+    width: 167px;
+    z-index: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:checked,
+  &:hover {
+    background-image: url(../../../assets/img/active_stars.svg);
   }
 }
 
-.rating__input-label {
-  cursor: pointer;
-}
-
-.rating__input:checked ~ .rating__input-label .rating__input-svg,
-.rating__input:focus ~ .rating__input-label .rating__input-svg,
-.rating__input-label:hover .rating__input-svg,
-.rating__input-label:hover ~ .rating__input-label .rating__input-svg {
-  fill: $red;
-}
-
-.rating__input-svg {
-  fill: transparentize($star-grey, 0.3)
+.rating__star:hover ~ .rating__star {
+  background-image: none;
 }

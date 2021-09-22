@@ -84,7 +84,15 @@ const сharacteristicsValues = [
   },
 ];
 
-const ratings = [5, 4, 3, 2, 1];
+const ratings = [1, 2, 3, 4, 5];
+
+const RatingDescription ={
+  1: 'Ужасно',
+  2: 'Плохо',
+  3: 'Нормально',
+  4: 'Хорошо',
+  5: 'Отлично',
+};
 
 const escButtonCode = 27;
 
@@ -105,5 +113,6 @@ export {
   сharacteristicsValues,
   ratings,
   escButtonCode,
-  defaultFormData
+  defaultFormData,
+  RatingDescription
 };

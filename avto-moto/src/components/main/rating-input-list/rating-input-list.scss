@@ -1,6 +1,13 @@
-.rating__input-list {
-  display:flex;
-  justify-content: space-around;
-  flex-direction: row-reverse;
-  height: max-content;
+.rating__group {
+  position: relative;
+  margin-left: 133px;
+  width: 167px;
+  height: 26px;
+  background-image: url(../../../assets/img/inactive-stars.svg);
+  background-size: auto 27px;
+  background-repeat: no-repeat;
+
+  &:focus-within {
+    outline: auto;
+  }
 }
